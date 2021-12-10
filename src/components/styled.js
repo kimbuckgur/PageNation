@@ -3,6 +3,7 @@ import styled from "styled-components";
 export const displayFlex = styled.div`
   display: flex;
   align-items: center;
+
 `;
 
 export const pagenation_Page = styled.div`
@@ -59,12 +60,21 @@ export const arrowImg = styled.img`
   cursor: pointer;
 `;
 
-export const MoveCount = styled.p`
+export const MoveCountbox = styled.p`
+  cursor: pointer;
+
   font-family: "Noto Sans KR", sans-serif;
   font-size: 30px;
   line-height: 30px;
 
+  width:40px;
+  height:40px;
   margin: 0px;
   margin-left: 20px;
   margin-right: 20px;
+
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  border:solid black 1px;
 `;
