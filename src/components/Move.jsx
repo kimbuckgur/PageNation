@@ -6,13 +6,13 @@ import arrowLeft from "../asset/arrowLeft.svg";
 import * as S from "./styled";
 
 function Move({ moveNum, setMoveNum }) {
-  // let listLength = Math.ceil((List.list.length) / 10);
-  // let countArray = new Array(listLength);
+  let listLength = Math.ceil((List.list.length) / 10);
+  const arr = Array.from({length: listLength}, () => 0);
 
-  const [countArray,setCountArray] = useState([1,2,3,4,5,6])
+  const [countArray,setCountArray] = useState(arr)
 
   const MoveClick = (e)=>{
-    const {name} = e.target;
+    let {name} = e.target;
     setMoveNum(name);
   }
 
