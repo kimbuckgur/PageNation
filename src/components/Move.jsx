@@ -6,16 +6,15 @@ import arrowLeft from "../asset/arrowLeft.svg";
 import * as S from "./styled";
 
 function Move({ moveNum, setMoveNum }) {
-  let listLength = Math.ceil((List.list.length) / 10);
-  const arr = Array.from({length: listLength}, () => 0);
+  let listLength = Math.ceil(List.list.length / 10);
+  const arr = Array.from({ length: listLength }, () => 0);
 
-  const [countArray,setCountArray] = useState(arr)
+  const [countArray, setCountArray] = useState(arr);
 
-  const MoveClick = (e)=>{
-    let {name} = e.target;
+  const MoveClick = (e) => {
+    let name  = e.target.innerText;
     setMoveNum(name);
-  }
-
+  };
   const minusMoveNum = () => {
     if (moveNum >= 2) {
       setMoveNum(moveNum - 1);
@@ -26,12 +25,14 @@ function Move({ moveNum, setMoveNum }) {
       setMoveNum(moveNum + 1);
     }
   };
-  
-  const CountArrayMap = countArray.map((x,index)=>{
-    return(
-      <S.MoveCountbox onClick={MoveClick} name={index+1}>{index+1}</S.MoveCountbox>
-    )
-  })
+
+  const CountArrayMap = countArray.map((x, index) => {
+    return (
+      <S.MoveCountbox onClick={MoveClick} name={index + 1}>
+        {index + 1}
+      </S.MoveCountbox>
+    );
+  });
 
   return (
     <S.displayFlex>
